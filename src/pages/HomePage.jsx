@@ -94,7 +94,7 @@ const HomePage = () => {
               handle="javicodes"
               status="Online"
               contactText="Contact Me"
-              avatarUrl="/src/assets/profile.png"
+              avatarUrl="/profile.png"
               showUserInfo={true}
               enableTilt={true}
               onContactClick={handleContactClick}
