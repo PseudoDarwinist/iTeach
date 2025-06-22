@@ -17,17 +17,14 @@
                     <a href="index.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="courses.html" class="nav-link">Courses</a>
-                </li>
-                <li class="nav-item">
-                    <a href="courses2.html" class="nav-link active">Courses 2</a>
+                    <a href="courses2.html" class="nav-link active">Courses</a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <div class="widget-container">
-        <div class="widget-grid">
+        <div class="widget-grid stacked" id="courseGrid">
             <!-- Prototyping Course Widget -->
             <div class="widget-card large image-background design-bg">
                 <div class="widget-overlay"></div>
@@ -99,6 +96,33 @@
                 <button class="widget-action-button">Start Learning</button>
             </div>
         </div>
+        
+        <!-- Doodle Annotation for Stacked Cards -->
+        <div class="stack-annotation" id="stackAnnotation">
+            <div class="doodle-arrow">
+                <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#ffa726;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M180 50 Q 140 30, 100 40 Q 60 50, 25 45 L 35 35 M 25 45 L 35 55" 
+                          stroke="url(#arrowGradient)" 
+                          stroke-width="6" 
+                          fill="none" 
+                          stroke-linecap="round" 
+                          stroke-linejoin="round"
+                          opacity="0.9"/>
+                </svg>
+            </div>
+            <div class="doodle-text">
+                Click here to view courses! 📚
+            </div>
+        </div>
     </div>
+
+    <script src="stacked-cards.js"></script>
 </body>
 </html>

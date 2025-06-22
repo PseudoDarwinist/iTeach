@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- Background -->
+  <rect width="400" height="400" fill="#2563eb"/>
+  
+  <!-- Stars -->
+  <circle cx="80" cy="60" r="2" fill="white" opacity="0.8"/>
+  <circle cx="320" cy="80" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="350" cy="150" r="1" fill="white" opacity="0.7"/>
+  <circle cx="60" cy="180" r="1" fill="white" opacity="0.5"/>
+  <circle cx="280" cy="250" r="1.5" fill="white" opacity="0.8"/>
+  
+  <!-- Apple logo -->
+  <path d="M120 40 Q140 30 160 40 Q170 50 160 70 Q150 80 140 70 Q130 60 120 40" fill="#4ade80" opacity="0.7"/>
+  <path d="M140 45 Q150 35 160 45 Q165 55 160 65 Q155 70 150 65 Q145 60 140 45" fill="#4ade80" opacity="0.7"/>
+  
+  <!-- Clouds -->
+  <ellipse cx="350" cy="300" rx="25" ry="15" fill="white" opacity="0.6"/>
+  <ellipse cx="340" cy="295" rx="20" ry="12" fill="white" opacity="0.6"/>
+  <ellipse cx="360" cy="295" rx="18" ry="10" fill="white" opacity="0.6"/>
+  
+  <ellipse cx="80" cy="320" rx="30" ry="18" fill="white" opacity="0.5"/>
+  <ellipse cx="70" cy="315" rx="25" ry="15" fill="white" opacity="0.5"/>
+  <ellipse cx="90" cy="315" rx="22" ry="12" fill="white" opacity="0.5"/>
+  
+  <!-- Face -->
+  <ellipse cx="200" cy="180" rx="80" ry="85" fill="#d2691e"/>
+  
+  <!-- Hair -->
+  <path d="M130 120 Q140 100 160 95 Q180 90 200 95 Q220 90 240 95 Q260 100 270 120 Q275 140 270 160 Q260 180 240 190 Q220 195 200 190 Q180 195 160 190 Q140 180 130 160 Q125 140 130 120" fill="#2d3748"/>
+  
+  <!-- Ears -->
+  <ellipse cx="130" cy="180" rx="12" ry="20" fill="#d2691e"/>
+  <ellipse cx="270" cy="180" rx="12" ry="20" fill="#d2691e"/>
+  
+  <!-- Eyes -->
+  <ellipse cx="175" cy="165" rx="15" ry="20" fill="white"/>
+  <ellipse cx="225" cy="165" rx="15" ry="20" fill="white"/>
+  <circle cx="175" cy="170" r="8" fill="#2d3748"/>
+  <circle cx="225" cy="170" r="8" fill="#2d3748"/>
+  <circle cx="177" cy="167" r="3" fill="white"/>
+  <circle cx="227" cy="167" r="3" fill="white"/>
+  
+  <!-- Eyebrows -->
+  <path d="M160 150 Q175 145 190 150" stroke="#2d3748" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M210 150 Q225 145 240 150" stroke="#2d3748" stroke-width="4" fill="none" stroke-linecap="round"/>
+  
+  <!-- Nose -->
+  <ellipse cx="200" cy="190" rx="8" ry="12" fill="#bf6930"/>
+  
+  <!-- Mouth -->
+  <path d="M185 215 Q200 225 215 215" stroke="#2d3748" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <!-- Beard -->
+  <path d="M160 200 Q170 240 200 245 Q230 240 240 200 Q235 220 220 235 Q200 240 180 235 Q165 220 160 200" fill="#2d3748"/>
+  
+  <!-- Jacket -->
+  <rect x="120" y="260" width="160" height="140" rx="20" fill="#4a5568"/>
+  
+  <!-- Jacket stripes -->
+  <rect x="120" y="280" width="160" height="8" fill="#f6ad55"/>
+  <rect x="120" y="295" width="160" height="8" fill="#68d391"/>
+  <rect x="120" y="310" width="160" height="8" fill="#fbb6ce"/>
+  <rect x="120" y="325" width="160" height="8" fill="#90cdf4"/>
+  <rect x="120" y="340" width="160" height="8" fill="#f6ad55"/>
+  <rect x="120" y="355" width="160" height="8" fill="#68d391"/>
+  <rect x="120" y="370" width="160" height="8" fill="#fbb6ce"/>
+  
+  <!-- Jacket collar -->
+  <path d="M140 260 Q150 250 160 260 L160 290 Q150 280 140 290 Z" fill="#2d5016"/>
+  <path d="M240 260 Q250 250 260 260 L260 290 Q250 280 240 290 Z" fill="#2d5016"/>
+  
+  <!-- Arms -->
+  <ellipse cx="100" cy="320" rx="25" ry="60" fill="#4a5568"/>
+  <ellipse cx="300" cy="320" rx="25" ry="60" fill="#4a5568"/>
+  
+  <!-- Hands -->
+  <circle cx="100" cy="380" r="18" fill="#d2691e"/>
+  <circle cx="300" cy="380" r="18" fill="#d2691e"/>
+</svg>

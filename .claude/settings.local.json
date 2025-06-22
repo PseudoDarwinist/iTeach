@@ -1,8 +1,29 @@
 {
   "permissions": {
     "allow": [
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "Bash(npm install:*)",
+      "Bash(open:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(gh repo view:*)",
+      "Bash(gh issue create:*)",
+      "Bash(gh auth login:*)",
+      "Bash(git checkout:*)",
+      "Bash(git stash:*)",
+      "Bash(node:*)",
+      "Bash(npm --version)",
+      "Bash(mkdir:*)",
+      "Bash(npm create:*)",
+      "Bash(ls:*)",
+      "Bash(rmdir:*)",
+      "Bash(npm run dev:*)",
+      "Bash(git add:*)"
     ],
     "deny": []
+  },
+  "tool_preferences": {
+    "search_strategy": "ast-grep-first",
+    "ast_grep_rule": "Default to ast-grep for syntax-aware and structural code searches. Use --lang appropriately (html, css, javascript, rust, python, etc.). Fall back to grep/rg for specific use cases: file names/paths, comments-only searches, simple string literals across file types, log files, markdown, plain text, or when explicitly requested for plain-text search."
   }
 }
