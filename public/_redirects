@@ -1,1 +1,3 @@
-/*    /index.html   200 
+# SPA fallback for client-side routing
+# Only redirect if the requested file doesn't exist
+/*    /index.html   200!
