@@ -1,14 +1,28 @@
 import Hero from '../components/layout/Hero'
-import ProfileCard from '../components/profile/ProfileCard'
+import StackedProfileCards from '../components/profile/StackedProfileCards'
+import ShinyText from '../components/ui/ShinyText'
+import Dither from '../components/effects/Dither'
+import { Link } from 'react-router-dom'
 
 const HomePage = () => {
-  const handleContactClick = () => {
-    console.log('Contact button clicked')
-    // Add contact functionality here
-  }
 
   return (
     <>
+      {/* Dithered Background */}
+      <div className="page-background">
+        <Dither
+          waveSpeed={0.03}
+          waveFrequency={2.5}
+          waveAmplitude={0.35}
+          waveColor={[0.7, 0.8, 0.95]}
+          colorNum={5}
+          pixelSize={2}
+          disableAnimation={false}
+          enableMouseInteraction={true}
+          mouseRadius={0.8}
+        />
+      </div>
+      
       <Hero 
         title="Build AI Systems That Actually Work"
         subtitle="Join fellow builders around the campfire of knowledge"
@@ -41,8 +55,8 @@ const HomePage = () => {
               
               <p className="description-text">
                 <strong>This program is different.</strong> This is a practical, no-nonsense,
-                hands-on program that will teach you <a href="#" className="inline-link">the skills you need for
-                building production systems in weeks, not months.</a>
+                hands-on program that will teach you the skills you need for
+                building production systems in weeks, not months.
               </p>
               
               <p className="description-text">
@@ -60,6 +74,9 @@ const HomePage = () => {
 
           <div className="pricing-section">
             <div className="pricing-card">
+              <h3 className="course-headline">
+                <ShinyText text="AI Everything" disabled={false} speed={3} className="course-shiny" />
+              </h3>
               <div className="price-header">
                 <span className="original-price">₹8999</span>
                 <span className="current-price">₹4999</span>
@@ -70,12 +87,12 @@ const HomePage = () => {
               </div>
               
               <p className="enrollment-info">
-                Enroll today and you'll get <strong>free, lifetime</strong>
+                Enroll today and you'll get <strong>free, lifetime </strong>
                 access to every future cohort. You'll never
                 pay another cent, ever.
               </p>
               
-              <button className="enroll-button">Enroll now</button>
+              <Link to="/payment/zero-one" className="enroll-button">Enroll now</Link>
               
               <div className="sign-in-section">
                 <span>Already a member?</span>
@@ -88,16 +105,15 @@ const HomePage = () => {
         <div className="about-me-section">
           <h2 className="about-title">Know About Me</h2>
           <div className="profile-container">
-            <ProfileCard
-              name="Javi A. Torres"
+            <StackedProfileCards
+              name="Chetan A. Singh"
               title="Software Engineer"
-              handle="javicodes"
+              handle="chetansingh"
               status="Online"
               contactText="Contact Me"
               avatarUrl="/profile.png"
               showUserInfo={true}
               enableTilt={true}
-              onContactClick={handleContactClick}
             />
           </div>
         </div>

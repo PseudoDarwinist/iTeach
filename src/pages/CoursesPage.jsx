@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import Dither from '../components/effects/Dither'
 
 const CoursesPage = () => {
   const [isExploded, setIsExploded] = useState(false)
@@ -11,6 +13,21 @@ const CoursesPage = () => {
 
   return (
     <div className="widget-container">
+      {/* Dithered Background */}
+      <div className="page-background">
+        <Dither
+          waveSpeed={0.025}
+          waveFrequency={3}
+          waveAmplitude={0.4}
+          waveColor={[0.6, 0.75, 0.9]}
+          colorNum={4}
+          pixelSize={3}
+          disableAnimation={false}
+          enableMouseInteraction={true}
+          mouseRadius={0.6}
+        />
+      </div>
+      
       <div 
         className={`widget-grid ${isExploded ? 'exploded' : 'stacked'}`} 
         id="courseGrid"
@@ -24,58 +41,63 @@ const CoursesPage = () => {
             <h3 className="widget-title-overlay">Prototyping & Designing</h3>
             <p className="widget-subtitle-overlay">with AI</p>
           </div>
+          <div className="widget-footer-overlay">
+            <div className="widget-price">₹3,999</div>
+            <Link to="/payment/prototyping-designing" className="mic-glow-button">
+              <span className="liquid-glass-text">Enroll</span>
+            </Link>
+          </div>
         </div>
 
         {/* Zero to One Course Widget */}
-        <div className="widget-card medium blue-widget">
-          <div className="widget-content-blue">
-            <div className="widget-icon-medium">🚀</div>
-            <h3 className="widget-title-blue">Zero → One</h3>
-            <p className="widget-subtitle-blue">From Idea to App</p>
-            <p className="widget-description">Build your first AI-powered application from scratch</p>
+        <div className="widget-card medium image-background zero-bg">
+          <div className="widget-overlay"></div>
+          <div className="widget-content-overlay">
+            <p className="widget-category">Course</p>
+            <h3 className="widget-title-overlay">Zero → One</h3>
+            <p className="widget-subtitle-overlay">From Idea to App. Learn everything that's happening in AI-World</p>
           </div>
-          <button className="widget-button">Get Started</button>
-        </div>
-
-        {/* First-Time AI Coders Widget */}
-        <div className="widget-card medium orange-widget">
-          <div className="widget-content-orange">
-            <div className="widget-icon-medium">👨‍💻</div>
-            <h3 className="widget-title-orange">First-Time AI-Coders</h3>
-            <p className="widget-subtitle-orange">Beginner Friendly</p>
-            <p className="widget-description">Perfect starting point for coding newcomers</p>
-          </div>
-          <button className="widget-action-button">Start Coding</button>
-        </div>
-
-        {/* Advanced ML Widget */}
-        <div className="widget-card small green-widget">
-          <div className="widget-content-green">
-            <div className="widget-icon-small">🤖</div>
-            <h3 className="widget-title-small">Advanced ML</h3>
-            <p className="widget-subtitle-green">Expert Level</p>
+          <div className="widget-footer-overlay">
+            <div className="widget-price">₹4,999</div>
+            <Link to="/payment/zero-one" className="mic-glow-button">
+              <span className="liquid-glass-text">Enroll</span>
+            </Link>
           </div>
         </div>
 
-        {/* Data Science Widget */}
-        <div className="widget-card small purple-widget">
-          <div className="widget-content-purple">
-            <div className="widget-icon-small">📊</div>
-            <h3 className="widget-title-small">Data Science</h3>
-            <p className="widget-subtitle-purple">Analytics & Insights</p>
+        {/* AI Coders Course Widget */}
+        <div className="widget-card medium image-background ai-bg">
+          <div className="widget-overlay"></div>
+          <div className="widget-tag-overlay">NEW</div>
+          <div className="widget-content-overlay">
+            <p className="widget-category">Course</p>
+            <h3 className="widget-title-overlay">First-Time AI-Coders</h3>
+            <p className="widget-subtitle-overlay">From beginner to AI-powered developer</p>
+          </div>
+          <div className="widget-footer-overlay">
+            <div className="widget-price">₹3,999</div>
+            <Link to="/payment/ai-coders" className="mic-glow-button">
+              <span className="liquid-glass-text">Enroll</span>
+            </Link>
           </div>
         </div>
 
-        {/* Deep Learning Widget */}
-        <div className="widget-card small dark-widget">
-          <div className="widget-content-dark">
-            <div className="widget-icon-large">🧠</div>
-            <h3 className="widget-big-title-small">Deep Learning</h3>
-            <p className="widget-subtitle-white">Understand the Basics</p>
-            <p className="widget-description">Foundation concepts of neural networks and deep learning</p>
+        {/* Master Claude Code Course Widget */}
+        <div className="widget-card large image-background claude-bg">
+          <div className="widget-overlay"></div>
+          <div className="widget-content-overlay">
+            <p className="widget-category">Course</p>
+            <h3 className="widget-title-overlay">Master Claude Code</h3>
+            <p className="widget-subtitle-overlay">3x your productivity</p>
           </div>
-          <button className="widget-action-button">Start Learning</button>
+          <div className="widget-footer-overlay">
+            <div className="widget-price">₹2,999</div>
+            <Link to="/payment/claude-code" className="mic-glow-button">
+              <span className="liquid-glass-text">Enroll</span>
+            </Link>
+          </div>
         </div>
+
       </div>
       
       {/* Doodle Annotation for Stacked Cards */}
