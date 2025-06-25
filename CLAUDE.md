@@ -1,4 +1,4 @@
-# iTeach Project Context
+# AI.School Project Context
 
 ## Project Overview
 Educational platform focused on AI development courses. **Migrated from static HTML to React.js** for enhanced component architecture and ProfileCard functionality.
@@ -11,6 +11,7 @@ Educational platform focused on AI development courses. **Migrated from static H
 - **Main Components**:
   - `HomePage.jsx` - Landing page with hero, pricing, and ProfileCard
   - `CoursesPage.jsx` - Interactive stacked cards with explosion animation
+  - `PaymentPage.jsx` - Professional payment page with UPI QR and bank transfer options
   - `Layout.jsx` - Navigation wrapper with active route highlighting
 - **Responsive design** preserved from original with glassmorphism effects
 - **CSS preserved** - All existing styles maintained in globals.css
@@ -126,6 +127,53 @@ python -m http.server 8000
 - ✅ **Component State**: Proper event handling and animations  
 - ✅ **Build System**: Modern tooling with instant feedback
 - ✅ **Code Organization**: Maintainable component structure
+
+## Course Cleanup (2025-06-24)
+### Simplification Completed ✅:
+- ✅ **Removed Deep Learning Course**: Cleaned up courses page to focus on core offerings
+- ✅ **Removed Course Detail Page**: Kept the interface simple and straightforward
+- ✅ **Updated Master Claude Code**: Converted back to simple card without navigation
+- ✅ **Cleaned Up Routing**: Simplified to just HomePage and CoursesPage
+- ✅ **Removed Futuristic Styles**: Cleaned up CSS to maintain clean design system
+
+### Current Course Lineup:
+1. **Prototyping & Designing with AI** (₹3,999) - Visual design course
+2. **Zero → One** (₹4,999) - From Idea to App development
+3. **First-Time AI-Coders** (₹3,999) - Beginner-friendly AI programming
+4. **Master Claude Code** (₹2,999) - Productivity enhancement with Claude
+
+## Payment System Implementation (2025-06-24)
+### Features Completed ✅:
+- ✅ **Brand Rebranding**: Changed from iTeach to AI.School across all components
+- ✅ **PaymentPage Component**: Professional payment interface with course summary
+- ✅ **UPI Payment Integration**: QR code generator and manual UPI payment options
+- ✅ **Bank Transfer Option**: Complete bank details for NEFT/RTGS transfers
+- ✅ **Course-Specific Routing**: Dynamic routing `/payment/:courseId` with course data
+- ✅ **Enroll Button Integration**: All course cards now navigate to payment page
+- ✅ **Responsive Design**: Mobile-optimized payment flow
+
+### Payment Options Available:
+1. **UPI Payment** (Recommended):
+   - QR code scanning with any UPI app
+   - Manual UPI ID entry option
+   - Instant payment processing
+   - Zero transaction fees
+
+2. **Bank Transfer**:
+   - NEFT/RTGS direct bank transfer
+   - Complete bank account details provided
+   - WhatsApp verification for payment confirmation
+
+### Technical Implementation:
+- **Route Structure**: `/payment/course-id` (e.g., `/payment/claude-code`)
+- **Course IDs**: 
+  - `prototyping-designing` - Prototyping & Designing with AI
+  - `zero-one` - Zero → One course
+  - `ai-coders` - First-Time AI-Coders
+  - `claude-code` - Master Claude Code
+- **Payment Flow**: Courses Page → Enroll Button → Payment Page → UPI/Bank Payment
+- **Course Data**: Price, original price, features, and descriptions included
+- **Security Features**: Secure payment badges, 24/7 support, instant access promises
 
 ## Previous Session Summary (2025-06-19)
 ### Completed Features:

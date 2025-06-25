@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-logo">
-          <h2>iTeach</h2>
+          <h2>AI.School</h2>
         </div>
         <ul className="nav-menu">
           <li className="nav-item">

@@ -1,0 +1,165 @@
+.stacked-profile-cards {
+  position: relative;
+  display: inline-block;
+  /* Ensure enough space for the offset and expansion */
+  margin: 40px;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stacked-card {
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.3s ease, 
+              filter 0.3s ease;
+}
+
+.stacked-card-back {
+  /* Position the back card behind and offset - increased visibility */
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-30px, 30px);
+  z-index: 1;
+  opacity: 0.75;
+  filter: brightness(0.8);
+}
+
+.stacked-card-front {
+  /* Front card stays in normal position */
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover effects for interaction when stacked */
+.stacked-profile-cards:not(.expanded):hover .stacked-card-back {
+  transform: translate(-40px, 40px);
+  opacity: 0.85;
+  filter: brightness(0.85);
+}
+
+.stacked-profile-cards:not(.expanded):hover .stacked-card-front {
+  transform: translate(8px, -8px);
+}
+
+/* Expanded state - cards side by side */
+.stacked-profile-cards.expanded {
+  cursor: default;
+  margin: 40px 80px; /* Extra margin for side-by-side layout */
+  display: flex;
+  gap: 100px; /* Space between cards */
+  align-items: center;
+  justify-content: center;
+}
+
+.stacked-profile-cards.expanded .stacked-card-back {
+  position: static; /* Change from absolute to static */
+  transform: none; /* Remove transform */
+  opacity: 1;
+  filter: brightness(1);
+  z-index: 2;
+}
+
+.stacked-profile-cards.expanded .stacked-card-front {
+  position: static; /* Change from relative to static */
+  transform: none; /* Remove transform */
+  z-index: 2;
+}
+
+/* Click hint styling */
+.click-hint {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  z-index: 10;
+  pointer-events: none;
+  animation: pulse-hint 2s infinite;
+}
+
+@keyframes pulse-hint {
+  0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
+}
+
+/* Optional: Add some depth with box-shadow */
+.stacked-card-back .pc-card-wrapper {
+  filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.4));
+}
+
+.stacked-card-front .pc-card-wrapper {
+  filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.5));
+}
+
+/* Expanded state shadows */
+.stacked-profile-cards.expanded .stacked-card-back .pc-card-wrapper,
+.stacked-profile-cards.expanded .stacked-card-front .pc-card-wrapper {
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.3));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stacked-profile-cards {
+    margin: 30px;
+  }
+  
+  .stacked-profile-cards.expanded {
+    margin: 30px 20px;
+    gap: 60px; /* Reduced gap for tablet */
+  }
+  
+  .stacked-card-back {
+    transform: translate(-20px, 20px);
+  }
+  
+  .stacked-profile-cards:not(.expanded):hover .stacked-card-back {
+    transform: translate(-25px, 25px);
+  }
+  
+  .stacked-profile-cards:not(.expanded):hover .stacked-card-front {
+    transform: translate(5px, -5px);
+  }
+  
+  .click-hint {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stacked-profile-cards {
+    margin: 20px;
+  }
+  
+  .stacked-profile-cards.expanded {
+    margin: 20px 10px;
+    gap: 40px; /* Smaller gap for mobile */
+    flex-direction: column; /* Stack vertically on small screens */
+  }
+  
+  .stacked-card-back {
+    transform: translate(-15px, 15px);
+  }
+  
+  .stacked-profile-cards:not(.expanded):hover .stacked-card-back {
+    transform: translate(-20px, 20px);
+  }
+  
+  .stacked-profile-cards:not(.expanded):hover .stacked-card-front {
+    transform: translate(3px, -3px);
+  }
+  
+  .click-hint {
+    font-size: 10px;
+    padding: 4px 10px;
+    top: -35px;
+  }
+}

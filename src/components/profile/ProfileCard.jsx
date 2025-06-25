@@ -235,8 +235,10 @@ const ProfileCardComponent = ({
     [iconUrl, grainUrl, showBehindGradient, behindGradient, innerGradient]
   );
 
-  const handleContactClick = useCallback(() => {
-    onContactClick?.();
+  const handleContactClick = useCallback((event) => {
+    event.stopPropagation();
+    event.preventDefault();
+    onContactClick?.(event);
   }, [onContactClick]);
 
   return (
