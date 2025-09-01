@@ -510,8 +510,8 @@ body {
 
 /* Stacked positioning with more visible fanning */
 .widget-grid.stacked .widget-card {
-    max-width: 400px; /* Normalize card sizes in stack */
-    width: 400px;
+    max-width: 500px; /* Normalize card sizes in stack */
+    width: 500px;
 }
 
 .widget-grid.stacked .widget-card:nth-child(1) {
@@ -541,8 +541,17 @@ body {
 
 .widget-grid.stacked .widget-card:nth-child(6) {
     transform: translate(-50%, -50%) rotate(2deg) translateY(25px) translateX(8px);
-    z-index: 1;
+    z-index: 2;
 }
+
+.widget-grid.stacked .widget-card:nth-child(7) {
+    transform: translate(-50%, -50%) rotate(-1deg) translateY(30px) translateX(-5px);
+    z-index: 2;
+}
+
+
+
+
 
 /* Exploded state - cards animate to their grid positions */
 .widget-grid.exploded {
@@ -586,6 +595,14 @@ body {
     animation-delay: 0.5s;
 }
 
+.widget-grid.exploded .widget-card:nth-child(7) {
+    animation-delay: 0.6s;
+}
+
+.widget-grid.exploded .widget-card:nth-child(7) {
+    animation-delay: 0.6s;
+}
+
 @keyframes cardExplode {
     from {
         transform: translate(-50%, -50%) scale(0.9);
@@ -599,8 +616,8 @@ body {
 
 .widget-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
     grid-auto-rows: min-content;
 }
 
@@ -627,17 +644,20 @@ body {
 /* Widget Sizes */
 .widget-card.large {
     grid-column: span 2;
-    min-height: 280px;
+    min-height: 400px;
+    padding: 40px;
 }
 
 .widget-card.medium {
     grid-column: span 1;
-    min-height: 240px;
+    min-height: 320px;
+    padding: 32px;
 }
 
 .widget-card.small {
     grid-column: span 1;
-    min-height: 180px;
+    min-height: 240px;
+    padding: 28px;
 }
 
 /* Gradient Backgrounds */
@@ -677,7 +697,7 @@ body {
 }
 
 .zero-bg {
-    background-image: url('/build-course.png');
+    background-image: url('/zero-to-one.png');
 }
 
 .ai-bg {
@@ -686,6 +706,41 @@ body {
 
 .claude-bg {
     background-image: url('/claude-code-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.workflow-bg {
+    background-image: url('/ai-workflow-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.mcp-bg {
+    background-image: url('/mcp.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ai-agents-bg {
+    background-image: url('/ai-agents.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.deep-learning-bg {
+    background-image: url('/deep-learning.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.deep-learning-bg {
+    background-image: url('/deep-learning.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -726,18 +781,18 @@ body {
 }
 
 .widget-title-overlay {
-    font-size: 2.2rem;
+    font-size: 3rem;
     font-weight: 800;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.7);
     line-height: 1.1;
 }
 
 .widget-subtitle-overlay {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: 600;
     opacity: 0.9;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -771,9 +826,9 @@ body {
 /* Pill-shaped neon-glow button */
 .mic-glow-button {
     position: relative;
-    width: 120px;
-    height: 45px;
-    border-radius: 25px;
+    width: 140px;
+    height: 55px;
+    border-radius: 30px;
     border: none;
     display: flex;
     align-items: center;
@@ -914,7 +969,7 @@ body {
 }
 
 .widget-price {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
 }
 

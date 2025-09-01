@@ -33,7 +33,8 @@ const CoursesPage = () => {
         id="courseGrid"
         onClick={handleStackClick}
       >
-        {/* Prototyping Course Widget */}
+        {/* ROW 1: BIG + SMALL */}
+        {/* 1. Prototyping Course Widget - LARGE */}
         <div className="widget-card large image-background design-bg">
           <div className="widget-overlay"></div>
           <div className="widget-content-overlay">
@@ -49,23 +50,24 @@ const CoursesPage = () => {
           </div>
         </div>
 
-        {/* Zero to One Course Widget */}
-        <div className="widget-card medium image-background zero-bg">
+        {/* 2. Deep Learning Course Widget - MEDIUM */}
+        <div className="widget-card medium image-background deep-learning-bg">
           <div className="widget-overlay"></div>
           <div className="widget-content-overlay">
             <p className="widget-category">Course</p>
-            <h3 className="widget-title-overlay">Zero → One</h3>
-            <p className="widget-subtitle-overlay">From Idea to App. Learn everything that's happening in AI-World</p>
+            <h3 className="widget-title-overlay">Deep Learning</h3>
+            <p className="widget-subtitle-overlay">Master neural networks and AI fundamentals</p>
           </div>
           <div className="widget-footer-overlay">
-            <div className="widget-price">₹4,999</div>
-            <Link to="/payment/zero-one" className="mic-glow-button">
+            <div className="widget-price">₹5,999</div>
+            <Link to="/payment/deep-learning" className="mic-glow-button">
               <span className="liquid-glass-text">Enroll</span>
             </Link>
           </div>
         </div>
 
-        {/* AI Coders Course Widget */}
+        {/* ROW 2: SMALL + BIG */}
+        {/* 3. AI Coders Course Widget - MEDIUM */}
         <div className="widget-card medium image-background ai-bg">
           <div className="widget-overlay"></div>
           <div className="widget-tag-overlay">NEW</div>
@@ -82,7 +84,24 @@ const CoursesPage = () => {
           </div>
         </div>
 
-        {/* Master Claude Code Course Widget */}
+        {/* 4. Zero to One Course Widget - LARGE */}
+        <div className="widget-card large image-background zero-bg">
+          <div className="widget-overlay"></div>
+          <div className="widget-content-overlay">
+            <p className="widget-category">Course</p>
+            <h3 className="widget-title-overlay">Zero → One</h3>
+            <p className="widget-subtitle-overlay">From Idea to App. Learn everything that's happening in AI-World</p>
+          </div>
+          <div className="widget-footer-overlay">
+            <div className="widget-price">₹4,999</div>
+            <Link to="/payment/zero-one" className="mic-glow-button">
+              <span className="liquid-glass-text">Enroll</span>
+            </Link>
+          </div>
+        </div>
+
+        {/* ROW 3: BIG + SMALL */}
+        {/* 5. Master Claude Code Course Widget - LARGE */}
         <div className="widget-card large image-background claude-bg">
           <div className="widget-overlay"></div>
           <div className="widget-content-overlay">
@@ -93,6 +112,57 @@ const CoursesPage = () => {
           <div className="widget-footer-overlay">
             <div className="widget-price">₹2,999</div>
             <Link to="/payment/claude-code" className="mic-glow-button">
+              <span className="liquid-glass-text">Enroll</span>
+            </Link>
+          </div>
+        </div>
+
+        {/* 6. AI Engineering Workflow Course Widget - MEDIUM */}
+        <div className="widget-card medium image-background workflow-bg">
+          <div className="widget-overlay"></div>
+          <div className="widget-tag-overlay">NEW</div>
+          <div className="widget-content-overlay">
+            <p className="widget-category">Course</p>
+            <h3 className="widget-title-overlay">AI-Powered Engineering</h3>
+            <p className="widget-subtitle-overlay">RFP → Requirements → Design → User Stories → JIRA → PRs → CI/CD</p>
+          </div>
+          <div className="widget-footer-overlay">
+            <div className="widget-price">₹5,999</div>
+            <Link to="/payment/ai-engineering-workflow" className="mic-glow-button">
+              <span className="liquid-glass-text">Enroll</span>
+            </Link>
+          </div>
+        </div>
+
+        {/* ROW 4: SMALL + BIG */}
+        {/* 7. MCP Course Widget - MEDIUM */}
+        <div className="widget-card medium image-background mcp-bg">
+          <div className="widget-overlay"></div>
+          <div className="widget-tag-overlay">NEW</div>
+          <div className="widget-content-overlay">
+            <p className="widget-category">Course</p>
+            <h3 className="widget-title-overlay">Master MCP</h3>
+            <p className="widget-subtitle-overlay">Model Context Protocol by Anthropic</p>
+          </div>
+          <div className="widget-footer-overlay">
+            <div className="widget-price">₹4,999</div>
+            <Link to="/payment/master-mcp" className="mic-glow-button">
+              <span className="liquid-glass-text">Enroll</span>
+            </Link>
+          </div>
+        </div>
+
+        {/* 8. AI Agents Course Widget - LARGE */}
+        <div className="widget-card large image-background ai-agents-bg">
+          <div className="widget-overlay"></div>
+          <div className="widget-content-overlay">
+            <p className="widget-category">Course</p>
+            <h3 className="widget-title-overlay">AI Agents</h3>
+            <p className="widget-subtitle-overlay">Build intelligent autonomous agents</p>
+          </div>
+          <div className="widget-footer-overlay">
+            <div className="widget-price">₹4,999</div>
+            <Link to="/payment/ai-agents" className="mic-glow-button">
               <span className="liquid-glass-text">Enroll</span>
             </Link>
           </div>

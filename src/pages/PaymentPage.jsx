@@ -34,6 +34,36 @@ const PaymentPage = () => {
       price: '₹2,999',
       originalPrice: '₹5,999',
       description: '3x your productivity with Claude Code'
+    },
+    'ai-engineering-workflow': {
+      title: 'AI-Powered Engineering Workflow',
+      price: '₹5,999',
+      originalPrice: '₹9,999',
+      description: 'Master the complete AI-powered development workflow from requirements to production'
+    },
+    'master-mcp': {
+      title: 'Master MCP (Model Context Protocol)',
+      price: '₹4,999',
+      originalPrice: '₹7,999',
+      description: 'Build AI agents that communicate with external applications using Anthropic\'s MCP'
+    },
+    'ai-agents': {
+      title: 'AI Agents',
+      price: '₹4,999',
+      originalPrice: '₹7,999',
+      description: 'Build intelligent autonomous agents that can perform complex tasks'
+    },
+    'deep-learning': {
+      title: 'Deep Learning',
+      price: '₹4,999',
+      originalPrice: '₹7,999',
+      description: 'Master neural networks and AI fundamentals from scratch'
+    },
+    'deep-learning': {
+      title: 'Deep Learning',
+      price: '₹4,999',
+      originalPrice: '₹7,999',
+      description: 'Master neural networks and AI fundamentals from scratch to advanced'
     }
   }
 
