@@ -64,6 +64,12 @@ const PaymentPage = () => {
       price: '₹4,999',
       originalPrice: '₹7,999',
       description: 'Master neural networks and AI fundamentals from scratch to advanced'
+    },
+    'modern-software-developer': {
+      title: 'The Modern Software Developer',
+      price: '₹5,999',
+      originalPrice: '₹9,999',
+      description: 'Master AI-powered development workflows: plan, generate with AI, modify, and repeat. 10x your productivity with cutting-edge tools for testing, documentation, and security.'
     }
   }
 

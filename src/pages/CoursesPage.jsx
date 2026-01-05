@@ -168,6 +168,24 @@ const CoursesPage = () => {
           </div>
         </div>
 
+        {/* ROW 5: BIG + SMALL */}
+        {/* 9. Modern Software Developer Course Widget - LARGE */}
+        <div className="widget-card large image-background modern-dev-bg">
+          <div className="widget-overlay"></div>
+          <div className="widget-tag-overlay">NEW</div>
+          <div className="widget-content-overlay">
+            <p className="widget-category">Course</p>
+            <h3 className="widget-title-overlay">The Modern Software Developer</h3>
+            <p className="widget-subtitle-overlay">10x your productivity with AI-powered development workflows</p>
+          </div>
+          <div className="widget-footer-overlay">
+            <div className="widget-price">₹5,999</div>
+            <Link to="/payment/modern-software-developer" className="mic-glow-button">
+              <span className="liquid-glass-text">Enroll</span>
+            </Link>
+          </div>
+        </div>
+
       </div>
       
       {/* Doodle Annotation for Stacked Cards */}
