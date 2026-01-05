@@ -1,213 +1,174 @@
-# AI.School Project Context
+# AI.School - Educational Platform
 
 ## Project Overview
-Educational platform focused on AI development courses. **Migrated from static HTML to React.js** for enhanced component architecture and ProfileCard functionality.
+AI.School is an educational platform focused on AI development courses. Built with React 18 + Vite, featuring interactive course cards, glassmorphism UI, and UPI payment integration.
 
-## Architecture v2.0 (React Migration - COMPLETED ✅)
-- **React 18 + Vite** - Modern build system with fast hot-reload
-- **Component-based architecture** with proper state management
-- **React Router v6** - Client-side routing between pages
-- **Original ProfileCard** - Fully functional with holographic effects
-- **Main Components**:
-  - `HomePage.jsx` - Landing page with hero, pricing, and ProfileCard
-  - `CoursesPage.jsx` - Interactive stacked cards with explosion animation
-  - `PaymentPage.jsx` - Professional payment page with UPI QR and bank transfer options
-  - `Layout.jsx` - Navigation wrapper with active route highlighting
-- **Responsive design** preserved from original with glassmorphism effects
-- **CSS preserved** - All existing styles maintained in globals.css
+## Tech Stack
+- **Framework**: React 18.3.1
+- **Build Tool**: Vite 6.0.5
+- **Routing**: React Router v6
+- **3D Effects**: React Three Fiber + Three.js
+- **Deployment**: Cloudflare Pages
 
-## Legacy Architecture (Preserved for Reference)
-- **Static HTML/CSS/JS** - Original implementation in root directory
-- **3 main pages**:
-  - `index.html` - Landing page with hero section and pricing
-  - `courses.html` - Carousel-based course browser
-  - `courses2.html` - Widget-style course layout
-
-## Key Features
-- Hero sections with background images
-- Interactive course carousel with navigation controls
-- Widget-based layout system for courses
-- Pricing cards with promotional pricing
-- Mobile-responsive grid layouts
-- CSS animations (mercury pulse, card glow, liquid glass effects)
-
-## File Structure
-```
-/
-├── index.html          # Main landing page
-├── courses.html        # Carousel courses page
-├── courses2.html       # Widget courses page
-├── styles.css          # All styles (1100+ lines)
-├── carousel.js         # Carousel functionality
-├── *.png, *.jpg        # Course images and backgrounds
-└── .claude/            # Project configuration
-```
-
-## Commands
-### Development (React)
+## Quick Start
 ```bash
-npm run dev          # Start Vite dev server (http://localhost:3000)
+npm install          # Install dependencies
+npm run dev          # Start dev server (http://localhost:3000)
 npm run build        # Production build
 npm run preview      # Preview production build
 ```
 
-### Legacy Development
-```bash
-# Static files - open directly in browser
-open index.html
-# Or use a simple server
-python -m http.server 8000
+## Project Structure
+```
+/
+├── src/
+│   ├── App.jsx                    # Main app with routes
+│   ├── main.jsx                   # React entry point
+│   ├── components/
+│   │   ├── effects/
+│   │   │   └── Dither.jsx         # WebGL dithered background effect
+│   │   ├── layout/
+│   │   │   ├── Layout.jsx         # App wrapper
+│   │   │   ├── Navbar.jsx         # Navigation bar
+│   │   │   └── Hero.jsx           # Hero section
+│   │   ├── profile/
+│   │   │   ├── ProfileCard.jsx    # Holographic profile card
+│   │   │   ├── CredentialsCard.jsx
+│   │   │   ├── StackedProfileCards.jsx
+│   │   │   └── ContactModal.jsx
+│   │   └── ui/
+│   │       └── ShinyText.jsx      # Animated text effect
+│   ├── pages/
+│   │   ├── HomePage.jsx           # Landing page with hero + ProfileCard
+│   │   ├── CoursesPage.jsx        # Interactive stacked course cards
+│   │   └── PaymentPage.jsx        # UPI/Bank payment page
+│   └── styles/
+│       ├── globals.css            # Global styles
+│       └── App.css                # App-specific styles
+├── public/                        # Static assets
+├── dist/                          # Production build output
+├── index.html                     # HTML entry point
+├── vite.config.js                 # Vite configuration
+├── wrangler.toml                  # Cloudflare Pages config
+└── styles.css                     # Legacy styles (1100+ lines)
 ```
 
-### Testing
-- **React Testing** - Component testing with fast refresh
-- **Manual testing** - Open in different browsers/devices  
-- **Responsive testing** - Check mobile breakpoints at 968px, 640px, 480px
-- **Interactive testing** - ProfileCard holographic effects, stacked cards animation
+## Routes
+| Path | Component | Description |
+|------|-----------|-------------|
+| `/` | HomePage | Landing page with hero, pricing, ProfileCard |
+| `/courses` | CoursesPage | Interactive stacked course cards |
+| `/payment/:courseId` | PaymentPage | Course-specific payment page |
+
+## Current Courses
+| Course ID | Title | Price |
+|-----------|-------|-------|
+| `prototyping-designing` | Prototyping & Designing with AI | ₹3,999 |
+| `deep-learning` | Deep Learning | ₹5,999 |
+| `ai-coders` | First-Time AI-Coders | ₹3,999 |
+| `zero-one` | Zero → One | ₹4,999 |
+| `claude-code` | Master Claude Code | ₹2,999 |
+| `ai-engineering-workflow` | AI-Powered Engineering | ₹5,999 |
+| `master-mcp` | Master MCP | ₹4,999 |
+| `ai-agents` | AI Agents | ₹4,999 |
+
+## Key Features
+
+### Stacked Cards Animation
+- Cards start stacked and explode into grid on click
+- Located in `CoursesPage.jsx` with CSS animations in `globals.css`
+- Doodle-style annotation guides users to click
+
+### Dither Background Effect
+- WebGL shader-based animated background
+- React Three Fiber implementation in `Dither.jsx`
+- Mouse-interactive waves with customizable parameters
+
+### Payment System
+- UPI QR code payment (primary)
+- Manual UPI ID copy
+- Course-specific routing via `/payment/:courseId`
+- Environment variable for UPI ID: `VITE_UPI_ID`
+
+### ProfileCard
+- Holographic card effect with mouse tracking
+- Multiple gradient layers and animations
+- Located in `src/components/profile/ProfileCard.jsx`
 
 ## Design System
+
 ### Colors
 - Primary: `#4f46e5` (indigo)
-- Success: `#059669` (green) 
+- Success: `#059669` (green)
 - Background: `#f8f9fa` (light gray)
-- Text: `#333`, `#1a1a1a` (dark)
+- Text: `#333`, `#1a1a1a`
 
 ### Typography
 - Font: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto`
 - Hero titles: `3.5rem`, weight `700`
 - Section titles: `1.5-3.2rem`
-- Body text: `1rem`, line-height `1.6`
+- Body: `1rem`, line-height `1.6`
 
-### Components
-- **Cards**: Glassmorphism with backdrop blur
-- **Buttons**: Rounded corners, hover transforms
-- **Navigation**: Fixed position, semi-transparent
-- **Widgets**: Grid-based with size variants (large, medium, small)
+### Component Patterns
+- **Cards**: Glassmorphism with `backdrop-filter: blur()`
+- **Widgets**: Size variants - `large`, `medium`, `small`
+- **Buttons**: `mic-glow-button` with `liquid-glass-text`
+- **Backgrounds**: Custom CSS classes like `design-bg`, `ai-bg`, `claude-bg`
 
-## Course Content
-1. **Prototyping and Designing with AI** - Visual design course
-2. **Zero → One** - Idea to app development
-3. **First-Time AI-Coders** - Beginner-friendly AI programming
+## Adding a New Course
 
-## Pricing Strategy
-- Original prices: ₹6999-₹8999
-- Current prices: ₹3999-₹4999 (promotional)
-- Lifetime access model
+1. **Add card to CoursesPage.jsx**:
+```jsx
+<div className="widget-card medium image-background your-course-bg">
+  <div className="widget-overlay"></div>
+  <div className="widget-content-overlay">
+    <p className="widget-category">Course</p>
+    <h3 className="widget-title-overlay">Course Title</h3>
+    <p className="widget-subtitle-overlay">Course subtitle</p>
+  </div>
+  <div className="widget-footer-overlay">
+    <div className="widget-price">₹X,XXX</div>
+    <Link to="/payment/course-id" className="mic-glow-button">
+      <span className="liquid-glass-text">Enroll</span>
+    </Link>
+  </div>
+</div>
+```
 
-## Development Notes
-- Uses CSS Grid and Flexbox for layouts
-- Extensive use of CSS custom properties for theming
-- JavaScript only for carousel functionality
-- Images optimized for web (course thumbnails, hero backgrounds)
-- SEO-friendly semantic HTML structure
+2. **Add course data to PaymentPage.jsx** in the `courseData` object:
+```jsx
+'course-id': {
+  title: 'Course Title',
+  price: '₹X,XXX',
+  originalPrice: '₹X,XXX',
+  description: 'Course description'
+}
+```
 
-## React Migration Session (2025-06-21) 
-### Migration Completed ✅:
-- ✅ **React 18 + Vite Setup**: Modern development environment with hot-reload
-- ✅ **Component Architecture**: Modular components in organized structure
-- ✅ **Original ProfileCard**: Fully functional with all holographic effects restored
-- ✅ **React Router**: Navigation between HomePage and CoursesPage
-- ✅ **State Management**: Stacked cards animation with proper React state
-- ✅ **CSS Preservation**: All existing styles maintained and working
-- ✅ **Asset Migration**: Profile images and course assets properly referenced
+3. **Add background CSS** in `globals.css` or `styles.css`:
+```css
+.your-course-bg {
+  background: url('/your-image.png') center/cover;
+}
+```
 
-### Technical Implementation:
-- **Framework**: React 18.3.1 with Vite 6.0.5 build tool
-- **Routing**: React Router v6 for client-side navigation  
-- **Components**: 
-  - `Layout/Navbar.jsx` - Navigation with active route highlighting
-  - `ProfileCard.jsx` - Original React component with full effects
-  - `HomePage.jsx` - Complete landing page with ProfileCard integration
-  - `CoursesPage.jsx` - Stacked cards with explosion animation
-- **Performance**: Fast development server, optimized builds
-- **Migration Strategy**: Preserved all functionality while modernizing architecture
+## Environment Variables
+```bash
+VITE_UPI_ID=your-upi-id@bank    # UPI ID for payments
+```
 
-### Resolved Issues:
-- ✅ **ProfileCard Colors**: Holographic effects now work perfectly in React
-- ✅ **Component State**: Proper event handling and animations  
-- ✅ **Build System**: Modern tooling with instant feedback
-- ✅ **Code Organization**: Maintainable component structure
-
-## Course Cleanup (2025-06-24)
-### Simplification Completed ✅:
-- ✅ **Removed Deep Learning Course**: Cleaned up courses page to focus on core offerings
-- ✅ **Removed Course Detail Page**: Kept the interface simple and straightforward
-- ✅ **Updated Master Claude Code**: Converted back to simple card without navigation
-- ✅ **Cleaned Up Routing**: Simplified to just HomePage and CoursesPage
-- ✅ **Removed Futuristic Styles**: Cleaned up CSS to maintain clean design system
-
-### Current Course Lineup:
-1. **Prototyping & Designing with AI** (₹3,999) - Visual design course
-2. **Zero → One** (₹4,999) - From Idea to App development
-3. **First-Time AI-Coders** (₹3,999) - Beginner-friendly AI programming
-4. **Master Claude Code** (₹2,999) - Productivity enhancement with Claude
-
-## Payment System Implementation (2025-06-24)
-### Features Completed ✅:
-- ✅ **Brand Rebranding**: Changed from iTeach to AI.School across all components
-- ✅ **PaymentPage Component**: Professional payment interface with course summary
-- ✅ **UPI Payment Integration**: QR code generator and manual UPI payment options
-- ✅ **Bank Transfer Option**: Complete bank details for NEFT/RTGS transfers
-- ✅ **Course-Specific Routing**: Dynamic routing `/payment/:courseId` with course data
-- ✅ **Enroll Button Integration**: All course cards now navigate to payment page
-- ✅ **Responsive Design**: Mobile-optimized payment flow
-
-### Payment Options Available:
-1. **UPI Payment** (Recommended):
-   - QR code scanning with any UPI app
-   - Manual UPI ID entry option
-   - Instant payment processing
-   - Zero transaction fees
-
-2. **Bank Transfer**:
-   - NEFT/RTGS direct bank transfer
-   - Complete bank account details provided
-   - WhatsApp verification for payment confirmation
-
-### Technical Implementation:
-- **Route Structure**: `/payment/course-id` (e.g., `/payment/claude-code`)
-- **Course IDs**: 
-  - `prototyping-designing` - Prototyping & Designing with AI
-  - `zero-one` - Zero → One course
-  - `ai-coders` - First-Time AI-Coders
-  - `claude-code` - Master Claude Code
-- **Payment Flow**: Courses Page → Enroll Button → Payment Page → UPI/Bank Payment
-- **Course Data**: Price, original price, features, and descriptions included
-- **Security Features**: Secure payment badges, 24/7 support, instant access promises
-
-## Previous Session Summary (2025-06-19)
-### Completed Features:
-- ✅ **Stacked Cards Animation**: Interactive course cards that start stacked and animate to grid on click
-- ✅ **Playful Annotation**: Doodle-style arrow and text guide users to click the stack
-- ✅ **Navigation Cleanup**: Removed old courses tab, renamed "Courses 2" to "Courses"
-- ✅ **GitHub Workflow**: Set up proper issues.md workflow and created issue #2
-- ✅ **MCP Integration**: Configured local (filesystem) and remote (Linear) MCP servers
-
-### Technical Implementation:
-- **Files Modified**: courses2.html, styles.css, stacked-cards.js, index.html
-- **CSS**: ~80 lines of stacked card animations with staggered delays
-- **JavaScript**: Click handling and one-time explosion animation
-- **Design**: Coral/orange gradient colors, bouncy animations, glassmorphism
-
-### Current Status:
-- ✅ Feature branch: `feature/stacked-cards-animation` 
-- ✅ GitHub issue: https://github.com/PseudoDarwinist/iTeach/issues/2
-- ⏳ Ready for merge after MCP testing
-- ⏳ MCP servers configured, need Claude Code restart to activate
-
-### Next Steps:
-1. Restart Claude Code to activate MCP servers
-2. Test Linear integration for project management
-3. Create PR for stacked cards feature
-4. Continue with next educational platform features
+## Deployment
+- **Platform**: Cloudflare Pages
+- **Config**: `wrangler.toml`
+- **Build command**: `npm run build`
+- **Output directory**: `dist`
 
 ## Browser Support
 - Modern browsers (Chrome, Firefox, Safari, Edge)
-- CSS Grid and Flexbox support required
-- Backdrop-filter support for glassmorphism effects
+- Requires CSS Grid, Flexbox, backdrop-filter
+- WebGL required for Dither effect
 
-## Performance Considerations
-- Static assets only - fast loading
-- Optimized images for course thumbnails
-- CSS animations use transform/opacity for GPU acceleration
-- Minimal JavaScript footprint
+## Performance Notes
+- CSS animations use `transform`/`opacity` for GPU acceleration
+- Three.js components lazy-load where possible
+- Images should be optimized before adding to project
