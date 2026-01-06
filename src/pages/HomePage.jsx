@@ -1,7 +1,7 @@
 import Hero from '../components/layout/Hero'
 import StackedProfileCards from '../components/profile/StackedProfileCards'
 import ShinyText from '../components/ui/ShinyText'
-import Dither from '../components/effects/Dither'
+import DitherLite from '../components/effects/DitherLite'
 import { Link } from 'react-router-dom'
 
 const HomePage = () => {
@@ -10,7 +10,7 @@ const HomePage = () => {
     <>
       {/* Dithered Background */}
       <div className="page-background">
-        <Dither
+        <DitherLite
           waveSpeed={0.03}
           waveFrequency={2.5}
           waveAmplitude={0.35}

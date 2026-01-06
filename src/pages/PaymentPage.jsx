@@ -1,6 +1,6 @@
 import { useParams, useSearchParams, Link } from 'react-router-dom'
 import { useState } from 'react'
-import Dither from '../components/effects/Dither'
+import DitherLite from '../components/effects/DitherLite'
 
 const PaymentPage = () => {
   const { courseId } = useParams()
@@ -57,12 +57,6 @@ const PaymentPage = () => {
       title: 'Deep Learning',
       price: '₹4,999',
       originalPrice: '₹7,999',
-      description: 'Master neural networks and AI fundamentals from scratch'
-    },
-    'deep-learning': {
-      title: 'Deep Learning',
-      price: '₹4,999',
-      originalPrice: '₹7,999',
       description: 'Master neural networks and AI fundamentals from scratch to advanced'
     }
   }
@@ -98,7 +92,7 @@ const PaymentPage = () => {
     <div className="payment-page">
       {/* Real Dithered Shader Background */}
       <div className="payment-background">
-        <Dither
+        <DitherLite
           waveSpeed={0.02}
           waveFrequency={2}
           waveAmplitude={0.4}

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Dither from '../components/effects/Dither'
+import DitherLite from '../components/effects/DitherLite'
 
 const CoursesPage = () => {
   const [isExploded, setIsExploded] = useState(false)
@@ -15,7 +15,7 @@ const CoursesPage = () => {
     <div className="widget-container">
       {/* Dithered Background */}
       <div className="page-background">
-        <Dither
+        <DitherLite
           waveSpeed={0.025}
           waveFrequency={3}
           waveAmplitude={0.4}

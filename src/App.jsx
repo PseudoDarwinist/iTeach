@@ -1,18 +1,36 @@
 import { Routes, Route } from 'react-router-dom'
+import { lazy, Suspense } from 'react'
 import Layout from './components/layout/Layout'
-import HomePage from './pages/HomePage'
-import CoursesPage from './pages/CoursesPage'
-import PaymentPage from './pages/PaymentPage'
 import './styles/App.css'
+
+// Lazy load pages for better initial bundle size
+const HomePage = lazy(() => import('./pages/HomePage'))
+const CoursesPage = lazy(() => import('./pages/CoursesPage'))
+const PaymentPage = lazy(() => import('./pages/PaymentPage'))
+
+// Simple loading fallback
+const PageLoader = () => (
+  <div style={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minHeight: '50vh',
+    color: '#666'
+  }}>
+    Loading...
+  </div>
+)
 
 function App() {
   return (
     <Layout>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/courses" element={<CoursesPage />} />
-        <Route path="/payment/:courseId" element={<PaymentPage />} />
-      </Routes>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/courses" element={<CoursesPage />} />
+          <Route path="/payment/:courseId" element={<PaymentPage />} />
+        </Routes>
+      </Suspense>
     </Layout>
   )
 }
