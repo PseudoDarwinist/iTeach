@@ -1,6 +1,7 @@
 import Hero from '../components/layout/Hero'
 import StackedProfileCards from '../components/profile/StackedProfileCards'
 import ShinyText from '../components/ui/ShinyText'
+import Feedback from '../components/ui/Feedback'
 import Dither from '../components/effects/Dither'
 import { Link } from 'react-router-dom'
 
@@ -42,6 +43,13 @@ const HomePage = () => {
               deploy production-ready systems from scratch — without the fluff.
             </p>
 
+          <Feedback
+            compact={true}
+            quote="Clear, practical and fun. Exactly what I needed to start shipping."
+            author="Happy Learner"
+            role="Builder"
+          />
+
             <div className="program-description">
               <h2 className="section-title">
                 This program is for builders looking to solve
@@ -70,6 +78,12 @@ const HomePage = () => {
                 <strong>This is the class I wish I had taken when I started.</strong>
               </p>
             </div>
+            
+            <Feedback
+              quote="Finally a course that focuses on real-world delivery, not buzzwords."
+              author="Pragmatic Engineer"
+              role="Product Developer"
+            />
           </div>
 
           <div className="pricing-section">
@@ -92,6 +106,13 @@ const HomePage = () => {
                 pay another cent, ever.
               </p>
               
+              <Feedback
+                compact={true}
+                quote="Worth every cent. I'd recommend it to any serious practitioner."
+                author="AI Enthusiast"
+                role="Learner"
+              />
+              
               <Link to="/payment/zero-one" className="enroll-button">Enroll now</Link>
               
               <div className="sign-in-section">
@@ -100,6 +121,24 @@ const HomePage = () => {
               </div>
             </div>
           </div>
+        
+        <div className="content-section cohorts-section">
+          <h2 className="section-title">Upcoming Cohorts</h2>
+          <p className="description-text">
+            Each iteration of the cohort consists of six live sessions plus three office hours over three weeks.
+          </p>
+          <p className="description-text">
+            Live sessions take place every Monday and Thursday. Office hours take place on Wednesdays. Every session is recorded. You can attend live or watch the recorded version later.
+          </p>
+          <h3 className="subsection-title">Here are the upcoming cohorts:</h3>
+          <ul className="description-text cohorts-list">
+            <li><strong>Cohort 4:</strong> November 3 - November 20, 2025.</li>
+            <li><strong>Cohort 5:</strong> February 2 - February 19, 2026.</li>
+          </ul>
+          <p className="description-text">
+            You don't have to wait for a specific cohort to join the program. You have lifetime access, so you can join any time and lock in the current price. The sooner you join, the cheaper it will be.
+          </p>
+        </div>
         </main>
         
         <div className="about-me-section">
